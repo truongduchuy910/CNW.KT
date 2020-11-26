@@ -13,12 +13,12 @@
 <body>
     <!-- Start: Navigation Clean -->
     <nav class="navbar navbar-light navbar-expand-md navigation-clean">
-        <div class="container"><a class="navbar-brand" href="#">Wellcome, <?php echo $author->username ?></a><button
+        <div class="container"><a class="navbar-brand" href="#">Wellcome, <?php echo $author->lastname ?></a><button
                 data-toggle="collapse" class="navbar-toggler" data-target="#"><span class="sr-only">Toggle
                     navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="/controller/search.php">Search</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/controller/search-result.php">Search</a></li>
                 </ul>
                 <?php echo ($author->username?
                 '<ul class="nav navbar-nav">
@@ -39,10 +39,17 @@
             <!-- Start: Image -->
             <div class="image-holder"></div>
             <!-- End: Image -->
-            <form method="post">
-                <h2 class="text-center"><strong>Update</strong>&nbsp;Username.</h2>
-                <div class="form-group"><input class="form-control" type="email" name="lastname" placeholder="Lastname"></div>
-                <div class="form-group"><input class="form-control" type="password" name="roles" placeholder="Roles"></div>
+            <form method="get" action="/controller/check-update.php">
+                <h2 class="text-center"><strong>Update</strong>.</h2>
+                <div class="form-group"><input class="form-control" type="lastname" name="username"
+                        placeholder="Lastname" value="<?php echo $account->username ?>" readonly>
+                </div>
+                <div class="form-group"><input class="form-control" type="lastname" name="lastname"
+                        placeholder="Lastname" value="<?php echo $account->lastname ?>">
+                </div>
+                <div class="form-group"><input class="form-control" name="roles" placeholder="Roles" name="roles"
+                        value="<?php echo $account->roles ?>">
+                </div>
                 <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Update</button></div>
             </form>
         </div>

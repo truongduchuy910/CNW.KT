@@ -12,7 +12,7 @@ class CheckSignIn extends Controller
         $account = $this->BO->doCheckSignIn($this->username, $this->password);
         if ($account) {
             $this->setAuthor($account);
-            $this->redirect("search");
+            $this->redirect("search-result");
         };
     }
     function render()

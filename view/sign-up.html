@@ -18,12 +18,19 @@
             <!-- Start: Image -->
             <div class="image-holder"></div>
             <!-- End: Image -->
-            <form method="post">
+            <form method="get" action="/controller/check-sign-up.php">
                 <h2 class="text-center"><strong>Create</strong> an account.</h2>
-                <div class="form-group"><input class="form-control" type="email" name="username" placeholder="Username"></div>
-                <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>
-                <div class="form-group"><input class="form-control" type="password" name="password-repeat" placeholder="Password (repeat)"></div>
-                <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Sign Up</button></div><a class="already" href="#">You already have an account? Login here.</a></form>
+                <div class="form-group"><input class="form-control" type="text" name="lastname" placeholder="Lastname">
+                </div>
+                <div class="form-group"><input class="form-control" type="text" name="username" placeholder="Username">
+                </div>
+                <div class="form-group"><input class="form-control" type="password" name="password"
+                        placeholder="Password"></div>
+                <div class="form-group"><input class="form-control" type="password" name="password-repeat"
+                        placeholder="Password (repeat)"></div>
+                <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Sign Up</button></div><a
+                    class="already" href="/controller/sign-in.php">You already have an account? Login here.</a>
+            </form>
         </div>
         <!-- End: Form Container -->
     </div>

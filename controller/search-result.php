@@ -3,9 +3,13 @@ include_once './controller.php';
 class SearchResult extends Controller
 {
     public $accounts;
+    function getParams()
+    {
+        $this->keyword = isset($_REQUEST['keyword']) ? $_REQUEST['keyword'] : null;
+    }
     function doModel()
     {
-        $this->accounts = $this->BO->doSearch();
+        $this->accounts = $this->BO->doSearch($this->keyword);
     }
     function render()
     {

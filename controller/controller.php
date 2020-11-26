@@ -5,6 +5,7 @@ include '../lib/database.php';
 
 include '../model/bean/account.php';
 include '../model/BO.php';
+include '../model/DAO.php';
 
 class Controller
 {
@@ -21,14 +22,16 @@ class Controller
     public function getAuthor()
     {
         $username  = isset($_SESSION['username']) ? $_SESSION['username'] : "";
+        $lastname = isset($_SESSION['lastname']) ? $_SESSION['lastname'] : "";
         $roles = isset($_SESSION['roles']) ? $_SESSION['roles'] : "";
-        $author = new Account($username, "", "", $roles);
+        $author = new Account($username, null, $lastname, $roles);
         return $author;
     }
     public function setAuthor(Account $account)
     {
         $_SESSION['username'] = $account->username;
         $_SESSION['roles'] = $account->roles;
+        $_SESSION['lastname'] = $account->lastname;
     }
     public function removeAuthor()
     {
@@ -49,5 +52,9 @@ class Controller
     public function redirect($page)
     {
         header('location:/controller/' . $page . '.php');
+    }
+    public function dispache($page, $params)
+    {
+        header('location:/controller/' . $page . '.php?' . $params);
     }
 }
