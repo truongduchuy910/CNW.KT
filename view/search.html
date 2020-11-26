@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>CNW.KT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="/assets/css/styles.min.css?h=5390b7bf1e7e9e933bc4b1e15de69291">
+</head>
+
+<body>
+    <!-- Start: Navigation Clean -->
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean">
+        <div class="container"><a class="navbar-brand" href="#">Wellcome, <?php echo $author->username ?></a><button
+                data-toggle="collapse" class="navbar-toggler" data-target="#"><span class="sr-only">Toggle
+                    navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="/controller/search.php">Search</a></li>
+                </ul>
+                <?php echo ($author->username?
+                '<ul class="nav navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="/controller/sign-out.php">Sign out</a></li>
+                </ul>':'
+                <ul class="nav navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="/controller/sign-in.php">Sign in</a></li>
+                </ul>');
+                ?>
+            </div>
+        </div>
+    </nav>
+    <!-- End: Navigation Clean -->
+    <!-- Start: Newsletter Subscription Form -->
+    <div class="newsletter-subscribe">
+        <div class="container">
+            <!-- Start: Intro -->
+            <div class="intro">
+                <h2 class="text-center">Search user with name</h2>
+                <p class="text-center">Input a part of name to search</p>
+            </div>
+            <!-- End: Intro -->
+            <form class="form-inline" method="get" action="/controller/search-result.php">
+                <div class="form-group"><input class="form-control" name="keyword" placeholder="Your Name..."></div>
+                <div class="form-group"><button class="btn btn-primary" type="submit">search</button></div>
+            </form>
+        </div>
+    </div>
+    <!-- End: Newsletter Subscription Form -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
